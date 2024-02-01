@@ -32,10 +32,6 @@ export const checkMultipleVue = (() => {
  */
 export const installFactory = ({ components, directives, plugins } = {}) => {
   const install = (Vue, config = {}) => {
-    if (install.installed) {
-      /* istanbul ignore next */
-      return
-    }
     install.installed = true
     checkMultipleVue(Vue)
     setConfig(config, Vue)
